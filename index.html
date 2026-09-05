@@ -2179,12 +2179,18 @@ window.addEventListener("keydown",(e)=>{
   }
 });
 
-/* click-to-advance on slide background (ignored on interactive controls) */
+/* click navigation by screen side (ignored on interactive controls) */
 slides.forEach(slide=>{
   slide.addEventListener("click",(e)=>{
-    if(e.target.closest("button, .btn, .sim-panel button")) return;
+    if(e.target.closest("button, .btn, .sim-panel button, a, input, select, textarea")) return;
     if(laserOn) return; // saat laser aktif, klik tidak memindah slide (hindari salah tekan)
-    next();
+
+    // Klik sisi kanan = next, sisi kiri = previous
+    if(e.clientX >= window.innerWidth / 2){
+      next();
+    } else {
+      prev();
+    }
   });
 });
 
