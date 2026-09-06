@@ -1856,7 +1856,6 @@ body.laser-on .laser-dot.visible{ opacity:1; }
   <section class="slide prev-slide" id="slide-6">
     <div class="slide-inner">
       <div class="slide-6-head">
-        <div class="kicker"><span class="num">06</span> METODE PCC</div>
         <h2 class="title">PENGERTIAN <span class="line2">PCC</span></h2>
       </div>
       <div class="pcc-definition-layout stagger">
@@ -1903,7 +1902,6 @@ body.laser-on .laser-dot.visible{ opacity:1; }
   <section class="slide prev-slide" id="slide-functions">
     <div class="slide-inner">
       <div class="slide-6-head">
-        <div class="kicker"><span class="num">07</span> METODE PCC</div>
         <h2 class="title">FUNGSI <span class="line2">PCC</span></h2>
       </div>
       <div class="pcc-function-grid stagger">
@@ -2185,8 +2183,8 @@ body.laser-on .laser-dot.visible{ opacity:1; }
 
 <!-- ================= HUD ================= -->
 <div class="hud">
-  <div class="progress-track"><div class="progress-fill" id="progressFill" style="width: 69.2308%;"></div></div>
-  <div class="slide-counter"><span id="counterCurrent">09</span> <span class="total">/ 13</span></div>
+  <div class="progress-track"><div class="progress-fill" id="progressFill" style="width: 7.142857%;"></div></div>
+  <div class="slide-counter"><span id="counterCurrent">01</span> <span class="total">/ <span id="counterTotal">14</span></span></div>
   <div class="nav-controls">
     <button class="nav-btn" id="btnPrev" aria-label="Sebelumnya">‹</button>
     <button class="nav-btn" id="btnNext" aria-label="Berikutnya">›</button>
@@ -2273,6 +2271,8 @@ let current = 0;
 
 const progressFill = document.getElementById("progressFill");
 const counterCurrent = document.getElementById("counterCurrent");
+const counterTotal = document.getElementById("counterTotal");
+if(counterTotal) counterTotal.textContent = total;
 const btnPrev = document.getElementById("btnPrev");
 const btnNext = document.getElementById("btnNext");
 const notesPanel = document.getElementById("notesPanel");
@@ -2798,9 +2798,7 @@ function onSlideEnter(index){
 renderTeamLists();
 updateSlowButton();
 renderFailover();
-slides[0].classList.add("active");
-btnPrev.disabled = true;
-updateNotes();
+goTo(0);
 </script>
 
 <script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a35b7a326e50f8a3',t:'MTc4ODUwOTAwMg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; visibility: hidden;" src="./lotbelen_files/saved_resource.html"></iframe><script type="module" src="./lotbelen_files/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;7f7b0fd8732c4326aae4b9d58d5c514a&quot;,&quot;spa&quot;:2}" crossorigin="anonymous"></script>
