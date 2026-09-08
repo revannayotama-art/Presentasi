@@ -428,6 +428,86 @@ img{ max-width:100%; display:block; }
   display:flex; gap:22px;
 }
 
+
+/* ---- Slide Tujuan & Manfaat ---- */
+.goal-head{ text-align:center; margin-bottom:clamp(10px,2vh,22px); }
+.goal-head p{ max-width:700px; margin:10px auto 0; font-size:clamp(13px,1.05vw,17px); line-height:1.55; opacity:.72; font-weight:600; }
+.goal-grid{ width:min(100%,1180px); margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:clamp(16px,2vw,30px); }
+.goal-panel{ background:var(--white); border-radius:var(--radius-lg); padding:clamp(18px,2.2vw,30px); box-shadow:var(--shadow); border-top:6px solid var(--teal); }
+.benefit-panel{ border-top-color:var(--orange); }
+.goal-label{ display:flex; align-items:center; gap:14px; margin-bottom:18px; }
+.goal-badge{ width:56px; height:56px; flex:0 0 56px; border-radius:18px; display:grid; place-items:center; background:rgba(11,122,114,.12); position:relative; }
+.benefit-panel .goal-badge{ background:rgba(242,153,74,.15); }
+.goal-label h3{ font-family:var(--font-head); font-size:clamp(20px,1.8vw,28px); margin:0; color:var(--navy); }
+.goal-label p{ margin:3px 0 0; font-size:clamp(11px,.9vw,14px); opacity:.65; line-height:1.35; }
+.goal-item{ display:flex; align-items:flex-start; gap:12px; padding:13px 0; border-top:1px solid rgba(15,33,56,.09); }
+.goal-icon{ width:42px; height:42px; flex:0 0 42px; border-radius:13px; display:grid; place-items:center; background:var(--teal); color:#fff; box-shadow:var(--shadow-sm); position:relative; overflow:hidden; }
+/* Ikon berbasis CSS agar tampil konsisten tanpa emoji */
+.goal-badge.target:before{content:"";width:24px;height:24px;border:4px solid var(--teal);border-radius:50%;box-shadow:inset 0 0 0 5px rgba(11,122,114,.12);}
+.goal-badge.target:after{content:"";position:absolute;width:7px;height:7px;background:var(--teal);border-radius:50%;}
+.goal-badge.diamond:before{content:"";width:22px;height:22px;border:4px solid var(--orange);transform:rotate(45deg);border-radius:4px;}
+.goal-icon.split:before{content:"";width:20px;height:3px;background:#fff;position:absolute;transform:translateX(-5px);}.goal-icon.split:after{content:"";position:absolute;width:11px;height:11px;border-top:3px solid #fff;border-right:3px solid #fff;transform:translateX(6px) rotate(45deg);}
+.goal-icon.bandwidth:before{content:"";width:5px;height:13px;background:#fff;box-shadow:8px -6px 0 #fff,16px -13px 0 #fff;position:absolute;bottom:10px;left:9px;border-radius:2px;}
+.goal-icon.stable:before{content:"";width:23px;height:23px;border:3px solid #fff;border-radius:50%;}.goal-icon.stable:after{content:"";position:absolute;width:10px;height:10px;background:#fff;border-radius:50%;}
+.goal-icon.speed:before{content:"";width:21px;height:12px;border:3px solid #fff;border-left:0;border-radius:0 12px 12px 0;transform:skewX(-18deg);}.goal-icon.speed:after{content:"";position:absolute;width:12px;height:3px;background:#fff;left:9px;top:19px;box-shadow:0 -7px 0 rgba(255,255,255,.7),0 7px 0 rgba(255,255,255,.7);}
+.goal-icon.users:before,.goal-icon.users:after{content:"";position:absolute;border:3px solid #fff;border-radius:50%;width:8px;height:8px;top:9px;}.goal-icon.users:before{left:10px;box-shadow:14px 0 0 -3px var(--orange);}.goal-icon.users:after{width:22px;height:10px;border-radius:14px 14px 0 0;border-bottom:0;top:23px;left:7px;}
+.goal-icon.shield:before{content:"";width:19px;height:22px;border:3px solid #fff;border-radius:10px 10px 12px 12px;clip-path:polygon(50% 0,100% 20%,88% 78%,50% 100%,12% 78%,0 20%);}
+
+.benefit-panel .goal-icon{ background:var(--orange); }
+.goal-item b{ display:block; font-family:var(--font-head); font-size:clamp(14px,1.08vw,17px); margin-bottom:3px; }
+.goal-item p{ margin:0; font-size:clamp(11px,.9vw,14px); line-height:1.45; opacity:.7; }
+/* Optimasi visual shape pada slide Tujuan & Manfaat */
+.goal-badge{width:62px;height:62px;flex-basis:62px;border-radius:20px;box-shadow:inset 0 0 0 1px rgba(11,122,114,.08);}
+.goal-label{gap:16px;margin-bottom:16px;}
+.goal-label h3{letter-spacing:.04em;}
+.goal-icon{width:46px;height:46px;flex-basis:46px;border-radius:15px;box-shadow:0 7px 14px rgba(7,94,88,.18);}
+.goal-icon:before,.goal-icon:after{box-sizing:border-box;}
+.goal-badge.target:before{width:28px;height:28px;border-width:3px;box-shadow:inset 0 0 0 5px rgba(11,122,114,.08);}
+.goal-badge.target:after{width:6px;height:6px;box-shadow:0 0 0 4px rgba(11,122,114,.12);}
+.goal-badge.diamond:before{width:24px;height:24px;border-width:3px;border-radius:6px;box-shadow:4px 4px 0 rgba(242,153,74,.12);}
+.goal-icon.split:before{width:19px;height:3px;border-radius:99px;transform:translateX(-7px);}
+.goal-icon.split:after{width:12px;height:12px;border-width:0 3px 3px 0;transform:translateX(5px) rotate(-45deg);}
+.goal-icon.bandwidth:before{width:6px;height:12px;left:10px;bottom:11px;border-radius:2px;box-shadow:9px -6px 0 #fff,18px -13px 0 #fff;}
+.goal-icon.stable:before{width:25px;height:25px;border-width:3px;box-shadow:inset 0 0 0 5px rgba(255,255,255,.18);}
+.goal-icon.stable:after{width:7px;height:7px;}
+.goal-icon.speed:before{width:23px;height:14px;border-width:3px;}
+.goal-icon.speed:after{left:8px;width:15px;height:3px;border-radius:99px;}
+.goal-icon.users:before{width:9px;height:9px;left:10px;top:9px;box-shadow:16px 0 0 -3px var(--orange);}
+.goal-icon.users:after{width:25px;height:11px;left:8px;top:25px;border-width:3px;}
+.goal-icon.shield:before{width:22px;height:25px;border-width:3px;border-radius:5px;clip-path:polygon(50% 0,92% 16%,84% 72%,50% 100%,16% 72%,8% 16%);}
+
+
+/* Final layout: slide tujuan dan manfaat dibuat lebih lega */
+#slide-3 .slide-inner{gap:1.8vh;}
+#slide-3 .goal-head{margin-bottom:clamp(12px,2vh,20px);}
+#slide-3 .goal-grid{width:min(100%,1120px);gap:clamp(20px,2.5vw,34px);}
+#slide-3 .goal-panel{padding:clamp(22px,2.6vw,36px);border-top-width:7px;min-height:clamp(370px,52vh,470px);}
+#slide-3 .goal-label{margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid rgba(15,33,56,.09);}
+#slide-3 .goal-badge{width:66px;height:66px;flex-basis:66px;border-radius:22px;background:linear-gradient(145deg,rgba(11,122,114,.16),rgba(11,122,114,.06));}
+#slide-3 .benefit-panel .goal-badge{background:linear-gradient(145deg,rgba(242,153,74,.2),rgba(242,153,74,.06));}
+#slide-3 .goal-item{align-items:center;padding:16px 0;gap:16px;}
+#slide-3 .goal-item b{font-size:clamp(16px,1.22vw,19px);margin:0;line-height:1.25;}
+#slide-3 .goal-icon{width:52px;height:52px;flex-basis:52px;border-radius:17px;box-shadow:0 8px 18px rgba(7,94,88,.18);}
+#slide-3 .benefit-panel .goal-icon{box-shadow:0 8px 18px rgba(217,122,40,.18);}
+/* shape: percabangan */
+#slide-3 .goal-icon.split:before{width:20px;height:18px;background:none;border-left:3px solid #fff;border-top:3px solid #fff;border-radius:0;transform:none;left:14px;top:17px;}
+#slide-3 .goal-icon.split:after{width:12px;height:12px;background:none;border-width:0 3px 3px 0;border-style:solid;border-color:#fff;transform:rotate(-45deg);left:25px;top:20px;box-shadow:0 12px 0 -3px var(--teal);}
+/* shape: grafik */
+#slide-3 .goal-icon.bandwidth:before{width:5px;height:13px;left:12px;bottom:12px;border-radius:2px;box-shadow:9px -6px 0 #fff,18px -13px 0 #fff;}
+#slide-3 .goal-icon.bandwidth:after{content:"";position:absolute;left:10px;right:10px;bottom:10px;border-bottom:2px solid rgba(255,255,255,.65);}
+/* shape: kestabilan */
+#slide-3 .goal-icon.stable:before{width:26px;height:26px;border-width:3px;}
+#slide-3 .goal-icon.stable:after{width:8px;height:8px;box-shadow:0 0 0 4px rgba(255,255,255,.16);}
+/* shape: kecepatan */
+#slide-3 .goal-icon.speed:before{width:25px;height:14px;border-width:3px;transform:skewX(-18deg) translateX(3px);}
+#slide-3 .goal-icon.speed:after{width:18px;left:9px;box-shadow:0 -8px 0 rgba(255,255,255,.65),0 8px 0 rgba(255,255,255,.65);}
+/* shape: pengguna */
+#slide-3 .goal-icon.users:before{width:10px;height:10px;left:11px;top:9px;box-shadow:18px 0 0 -2px var(--orange);}
+#slide-3 .goal-icon.users:after{width:28px;height:12px;left:9px;top:27px;border-width:3px;}
+/* shape: perisai */
+#slide-3 .goal-icon.shield:before{width:24px;height:27px;border-width:3px;border-radius:7px;clip-path:polygon(50% 0,92% 16%,84% 72%,50% 100%,16% 72%,8% 16%);}
+@media(max-width:800px){ .goal-grid{grid-template-columns:1fr;} .goal-head{margin-bottom:12px;} }
+
 /* ---- Slide 02 : Masalah ---- */
 .problem-wrap{ display:flex; flex-direction:column; gap:2.4vh; }
 .activity-row{ display:flex; gap:clamp(14px,2vw,28px); flex-wrap:wrap; }
@@ -1654,6 +1734,46 @@ body.laser-on .laser-dot.visible{ opacity:1; }
 #slide-2 .problem-bottleneck>span{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#e1483c;color:#fff;font-weight:900;flex:0 0 auto}
 #slide-2 .problem-bottleneck b{display:block;font-family:var(--font-head);font-size:clamp(13px,1.05vw,16px);color:#9d3029}
 #slide-2 .problem-bottleneck small{display:block;margin-top:2px;font-size:clamp(11px,.9vw,13px);line-height:1.35;color:#70433f}
+
+/* Penyempurnaan akhir ikon slide Tujuan & Manfaat: sederhana dan konsisten */
+#slide-3 .goal-icon{overflow:visible;box-shadow:none;border:1px solid rgba(255,255,255,.18);}
+#slide-3 .goal-icon::before,#slide-3 .goal-icon::after{content:"";position:absolute;box-sizing:border-box;transform:none;box-shadow:none;background:none;}
+/* Membagi trafik: percabangan yang bersih */
+#slide-3 .goal-icon.split::before{width:3px;height:26px;background:#fff;border-radius:99px;left:17px;top:12px;}
+#slide-3 .goal-icon.split::after{width:18px;height:18px;border-top:3px solid #fff;border-right:3px solid #fff;transform:rotate(45deg);left:23px;top:10px;}
+/* Bandwidth: tiga batang sederhana */
+#slide-3 .goal-icon.bandwidth::before{width:5px;height:11px;background:#fff;border-radius:2px;left:12px;bottom:12px;box-shadow:9px -7px 0 #fff,18px -14px 0 #fff;}
+#slide-3 .goal-icon.bandwidth::after{left:10px;right:10px;bottom:10px;border-bottom:2px solid rgba(255,255,255,.7);}
+/* Stabil: lingkaran fokus */
+#slide-3 .goal-icon.stable::before{width:26px;height:26px;border:3px solid #fff;border-radius:50%;left:11px;top:11px;}
+#slide-3 .goal-icon.stable::after{width:8px;height:8px;background:#fff;border-radius:50%;left:20px;top:20px;}
+/* Kecepatan: tiga garis gerak */
+#slide-3 .goal-icon.speed::before{width:24px;height:3px;background:#fff;border-radius:99px;left:14px;top:16px;box-shadow:-5px 8px 0 rgba(255,255,255,.82),5px 16px 0 rgba(255,255,255,.65);}
+#slide-3 .goal-icon.speed::after{width:10px;height:10px;border-top:3px solid #fff;border-right:3px solid #fff;transform:rotate(45deg);right:10px;top:13px;}
+/* Banyak pengguna: dua figur minimal */
+#slide-3 .goal-icon.users::before{width:9px;height:9px;background:#fff;border-radius:50%;left:11px;top:10px;box-shadow:18px 2px 0 -1px #fff;}
+#slide-3 .goal-icon.users::after{width:28px;height:13px;border:3px solid #fff;border-bottom:0;border-radius:16px 16px 0 0;left:9px;bottom:9px;}
+/* Andal: perisai tegas */
+#slide-3 .goal-icon.shield::before{width:23px;height:27px;border:3px solid #fff;left:14px;top:11px;border-radius:5px;clip-path:polygon(50% 0,96% 16%,84% 72%,50% 100%,16% 72%,4% 16%);}
+#slide-3 .goal-icon.shield::after{width:9px;height:5px;border-left:3px solid #fff;border-bottom:3px solid #fff;transform:rotate(-45deg);left:21px;top:23px;}
+#slide-3 .goal-badge{box-shadow:none;border:1px solid rgba(15,33,56,.06);}
+
+
+/* Final SVG icons: dibuat seragam agar tidak ada bentuk yang hilang */
+#slide-3 .goal-icon{display:grid!important;place-items:center!important;overflow:visible!important;position:relative!important;}
+#slide-3 .goal-icon:before,#slide-3 .goal-icon:after{content:none!important;display:none!important;}
+#slide-3 .goal-icon svg{width:28px;height:28px;display:block;overflow:visible;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
+#slide-3 .goal-icon.split svg{width:30px;height:30px;}
+#slide-3 .goal-icon.bandwidth svg{width:29px;height:29px;}
+#slide-3 .goal-icon.users svg{width:29px;height:29px;}
+#slide-3 .goal-icon.shield svg{width:28px;height:28px;}
+
+
+/* Penyempurnaan ikon tujuan nomor 1 */
+.goal-icon.split:before,.goal-icon.split:after{display:none!important;}
+.goal-icon.split svg{display:block;width:28px;height:28px;overflow:visible;fill:none;stroke:#fff;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;}
+.goal-icon.split svg circle{fill:#fff;stroke:none;}
+
 </style>
 
 <style id="slide13-fix">
@@ -1714,6 +1834,28 @@ body.laser-on .laser-dot.visible{ opacity:1; }
 #slide-6 .natural-road .lane-label.l1{top:13%;}
 #slide-6 .natural-road .lane-label.l2{bottom:13%;}
 #slide-6 .natural-road .traffic-in{position:absolute;left:6%;top:12px;z-index:3;font-size:9px;font-weight:900;letter-spacing:.14em;color:var(--navy);opacity:.72;}
+
+/* Final refinement: clean, consistent geometric icons */
+#slide-3 .goal-icon{position:relative;display:block;overflow:visible;border-radius:16px;}
+#slide-3 .goal-icon:before,#slide-3 .goal-icon:after{content:"";position:absolute;box-sizing:border-box;}
+/* Trafik bercabang */
+#slide-3 .goal-icon.split:before{left:13px;top:13px;width:24px;height:26px;background:linear-gradient(#fff,#fff) 0 50%/13px 3px no-repeat,linear-gradient(45deg,transparent 47%,#fff 48% 52%,transparent 53%) 12px 3px/12px 10px no-repeat,linear-gradient(-45deg,transparent 47%,#fff 48% 52%,transparent 53%) 12px 13px/12px 10px no-repeat;}
+#slide-3 .goal-icon.split:after{left:32px;top:10px;width:7px;height:7px;border:2px solid #fff;border-left:0;border-bottom:0;transform:rotate(45deg);box-shadow:0 22px 0 -2px var(--teal);}
+/* Bandwidth: bar chart */
+#slide-3 .goal-icon.bandwidth:before{left:12px;bottom:12px;width:6px;height:12px;background:#fff;border-radius:2px;box-shadow:10px -6px 0 #fff,20px -13px 0 #fff;}
+#slide-3 .goal-icon.bandwidth:after{left:10px;bottom:9px;width:32px;border-bottom:2px solid rgba(255,255,255,.7);}
+/* Stabil: concentric rings */
+#slide-3 .goal-icon.stable:before{left:13px;top:13px;width:26px;height:26px;border:3px solid #fff;border-radius:50%;box-shadow:inset 0 0 0 5px rgba(255,255,255,.16);}
+#slide-3 .goal-icon.stable:after{left:22px;top:22px;width:8px;height:8px;background:#fff;border-radius:50%;}
+/* Cepat: three clean motion lines */
+#slide-3 .goal-icon.speed:before{left:11px;top:18px;width:27px;height:3px;background:#fff;border-radius:99px;box-shadow:5px -8px 0 -1px rgba(255,255,255,.85),5px 8px 0 -1px rgba(255,255,255,.85);}
+#slide-3 .goal-icon.speed:after{right:10px;top:15px;width:10px;height:10px;border-top:3px solid #fff;border-right:3px solid #fff;transform:rotate(45deg);}
+/* Pengguna: two balanced silhouettes */
+#slide-3 .goal-icon.users:before{left:11px;top:9px;width:10px;height:10px;border:3px solid #fff;border-radius:50%;box-shadow:17px 0 0 -3px var(--orange);}
+#slide-3 .goal-icon.users:after{left:9px;top:25px;width:30px;height:13px;border:3px solid #fff;border-bottom:0;border-radius:18px 18px 0 0;}
+/* Andal: shield with check mark */
+#slide-3 .goal-icon.shield:before{left:14px;top:11px;width:24px;height:29px;border:3px solid #fff;clip-path:polygon(50% 0,94% 16%,84% 74%,50% 100%,16% 74%,6% 16%);border-radius:0;}
+#slide-3 .goal-icon.shield:after{left:21px;top:22px;width:11px;height:6px;border-left:3px solid #fff;border-bottom:3px solid #fff;transform:rotate(-45deg);}
 </style>
 
 </head>
@@ -1800,33 +1942,21 @@ body.laser-on .laser-dot.visible{ opacity:1; }
   <!-- ================= SLIDE 03 : TUJUAN & MANFAAT ================= -->
   <section class="slide prev-slide" id="slide-3">
     <div class="slide-inner">
-      <h2 class="title" style="text-align:center">TUJUAN DAN <span style="color:var(--teal-dark)">MANFAAT</span></h2>
-      <div style="display:grid; grid-template-columns:1fr auto 1fr; gap:2.5vw; align-items:center;" class="stagger">
-        <div class="cream-card">
-          <h3 class="ch">TUJUAN</h3>
-          <div class="check-list">
-            <div class="row"><span class="ck">✓</span>Membagi beban trafik ke beberapa ISP secara merata.</div>
-            <div class="row"><span class="ck">✓</span>Meningkatkan kecepatan dan kestabilan internet.</div>
-            <div class="row"><span class="ck">✓</span>Memaksimalkan penggunaan bandwidth dari semua ISP.</div>
-          </div>
+      <div class="goal-head stagger">
+        <h2 class="title" style="text-align:center">TUJUAN DAN <span style="color:var(--teal-dark)">MANFAAT</span></h2>
+      </div>
+      <div class="goal-grid stagger">
+        <div class="goal-panel purpose-panel">
+          <div class="goal-label"><span class="goal-badge target"></span><div><h3>TUJUAN</h3></div></div>
+          <div class="goal-item"><span class="goal-icon split"><svg viewBox="0 0 24 24" aria-hidden="true"><g transform="rotate(90 12 12)"><path d="M5 5l7 7 7-7 M12 12v7"/><path d="M12 12l0 0"/></g><circle cx="5" cy="5" r="1.5"/><circle cx="19" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></span><div><b>Membagi Beban Trafik</b></div></div>
+          <div class="goal-item"><span class="goal-icon bandwidth"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 17v-5M12 17V8M18 17V4"/></svg></span><div><b>Mengoptimalkan Bandwidth</b></div></div>
+          <div class="goal-item"><span class="goal-icon stable"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2"/></svg></span><div><b>Menjaga Kestabilan Koneksi</b></div></div>
         </div>
-        <div><svg class="illu-sm" viewBox="0 0 220 220" aria-hidden="true">
-  <circle cx="110" cy="110" r="100" fill="#0B7A72"></circle>
-  <circle cx="110" cy="110" r="78" fill="#fff"></circle>
-  <circle cx="110" cy="110" r="56" fill="#0B7A72"></circle>
-  <circle cx="110" cy="110" r="34" fill="#fff"></circle>
-  <circle cx="110" cy="110" r="14" fill="#E1483C"></circle>
-  <path d="M110 110 L196 24" stroke="#0F2138" stroke-width="8" stroke-linecap="round"></path>
-  <path d="M196 24 l-30 6 l14 -20z M196 24 l-6 30 l20 -14z" fill="#244C8C"></path>
-  <path d="M104 104 l12 12" stroke="#fff" stroke-width="3" stroke-linecap="round"></path>
-</svg></div>
-        <div class="cream-card">
-          <h3 class="ch">MANFAAT</h3>
-          <div class="check-list">
-            <div class="row"><span class="ck">✓</span>Internet lebih cepat dan stabil untuk semua.</div>
-            <div class="row"><span class="ck">✓</span>Semua pengguna mendapat koneksi yang adil.</div>
-            <div class="row"><span class="ck">✓</span>Koneksi tetap jalan jika salah satu ISP bermasalah.</div>
-          </div>
+        <div class="goal-panel benefit-panel">
+          <div class="goal-label"><span class="goal-badge diamond"></span><div><h3>MANFAAT</h3></div></div>
+          <div class="goal-item"><span class="goal-icon speed"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14h9M4 10h14M4 18h6M15 15l5-5-5-5"/></svg></span><div><b>Akses Internet Lebih Optimal</b></div></div>
+          <div class="goal-item"><span class="goal-icon users"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c.7-3.5 2.6-5.5 5.5-5.5s4.8 2 5.5 5.5"/><circle cx="17" cy="9" r="2"/><path d="M16 15c2.5.2 4 1.8 4.5 4.5"/></svg></span><div><b>Lebih Baik untuk Banyak Pengguna</b></div></div>
+          <div class="goal-item"><span class="goal-icon shield"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-2.7 7.8-7 10-4.3-2.2-7-5.4-7-10V6l7-3z"/><path d="M8.5 12l2.2 2.2 4.8-4.8"/></svg></span><div><b>Koneksi Lebih Andal</b></div></div>
         </div>
       </div>
     </div>
@@ -2263,7 +2393,7 @@ const NOTES = [
   { presenter:"Presenter 1", duration:"± 40 detik", text:"Assalamu'alaikum dan selamat pagi semuanya. Kami dari Tim TJKT Kelas 12 SMKN 1 Sawit akan mempresentasikan proyek Implementasi Load Balancing Metode PCC pada MikroTik. Pada presentasi ini kami akan menjelaskan masalah jaringan, tujuan proyek, topologi, cara kerja PCC, konfigurasi, failover, sampai hasil pengujian." },
   { presenter:"Presenter 1", duration:"± 45 detik", text:"Pada slide ini terlihat masalah utama yang kami hadapi. Karena hanya menggunakan satu jalur internet, kecepatan bisa tidak stabil saat banyak pengguna terhubung. Semua trafik juga menumpuk di satu ISP, sehingga aktivitas seperti belajar online, upload tugas, download, dan streaming dapat terganggu." },
   { presenter:"Presenter 1", duration:"± 35 detik", text:"Load balancing adalah teknik untuk membagi trafik jaringan ke beberapa jalur internet. Sederhananya, load balancing seperti membagi kendaraan ke dua jalan agar tidak semua kendaraan melewati satu jalan yang sama. Dengan beberapa jalur internet, trafik dapat dibagi secara lebih seimbang sesuai konfigurasi yang digunakan." },
-  { presenter:"Presenter 1", duration:"± 40 detik", text:"Tujuan proyek kami adalah membagi beban trafik ke beberapa ISP secara merata, meningkatkan kecepatan dan kestabilan internet, serta memaksimalkan bandwidth dari semua ISP. Manfaat yang diharapkan adalah internet lebih stabil, pembagian koneksi lebih adil, dan koneksi tetap dapat berjalan saat salah satu ISP bermasalah." },
+  { presenter:"Presenter 1", duration:"± 45 detik", text:"Pada slide ini terdapat tujuan dan manfaat dari penerapan load balancing. Tujuan pertama adalah membagi beban trafik agar koneksi tidak menumpuk pada satu jalur. Kedua, mengoptimalkan bandwidth dari beberapa ISP. Ketiga, menjaga kestabilan koneksi saat jaringan digunakan oleh banyak pengguna. Manfaat yang diperoleh adalah akses internet menjadi lebih optimal, jaringan dapat melayani banyak pengguna dengan lebih baik, dan koneksi menjadi lebih andal. " },
   { presenter:"Presenter 2", duration:"± 40 detik", text:"Ini adalah topologi jaringan sebelum menggunakan load balancing. Hanya ada satu ISP yang terhubung ke jaringan dan seluruh PC, laptop, serta HP menggunakan jalur yang sama. Akibatnya, ketika jalur tersebut penuh, semua pengguna ikut merasakan penurunan kecepatan." },
   { presenter:"Presenter 2", duration:"± 45 detik", text:"Setelah proyek diterapkan, jaringan memiliki dua ISP yang masuk ke MikroTik. ISP 1 menggunakan jalur merah dan ISP 2 menggunakan jalur biru. MikroTik menggunakan PCC untuk membagi trafik dari perangkat client ke kedua jalur tersebut, sehingga beban tidak hanya berada pada satu ISP." },
   { presenter:"Presenter 2", duration:"± 50 detik", text:"PCC atau Per Connection Classifier adalah fitur pada MikroTik yang digunakan untuk membagi koneksi internet ke beberapa ISP. Cara kerjanya bisa dianalogikan seperti pembagian kendaraan ke beberapa jalan. Jadi, ketika kita memiliki dua koneksi internet, PCC dapat membagi koneksi tersebut agar trafik tidak hanya melewati satu ISP. Dengan begitu, penggunaan beberapa koneksi internet bisa menjadi lebih optimal dan beban jaringan dapat terbagi." },
