@@ -756,6 +756,23 @@ img{ max-width:100%; display:block; }
 .tag-isp1{ background:var(--red); }
 .tag-isp2{ background:var(--blue); }
 
+
+/* ---- Slide 06 : clean PCC definition layout ---- */
+#slide-6 .slide-inner{gap:2vh;}
+#slide-6 .slide-6-head{text-align:center;}
+#slide-6 .title{font-size:clamp(28px,2.7vw,42px);display:block;text-align:center;}
+#slide-6 .title .line2{font-size:1em;letter-spacing:0;margin-top:0;}
+#slide-6 .pcc-definition-clean{width:min(100%,1120px);margin:clamp(10px,2vh,22px) auto 0;display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(28px,4vw,58px);align-items:center;min-height:clamp(320px,48vh,470px);}
+#slide-6 .pcc-definition-text{padding:clamp(18px,2vw,30px) 0;}
+
+#slide-6 .pcc-definition-text h3{font-family:var(--font-head);font-size:clamp(19px,1.7vw,27px);margin:0 0 14px;color:var(--navy);}
+#slide-6 .pcc-definition-text p{max-width:560px;font-size:clamp(15px,1.18vw,19px);line-height:1.65;opacity:.82;margin:0;}
+
+#slide-6 .pcc-example b{font-size:1.05em;}
+#slide-6 .pcc-illustration{min-height:clamp(280px,39vh,390px);border-radius:var(--radius-lg);background:var(--teal);padding:clamp(14px,1.5vw,24px);box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+#slide-6 .pcc-illustration .natural-road{width:100%;height:100%;min-height:250px;}
+@media(max-width:800px){#slide-6 .pcc-definition-clean{grid-template-columns:1fr;}#slide-6 .pcc-illustration{min-height:280px;}}
+
 /* ---- Slide 07 : simulation panel ---- */
 .sim-panel{
   display:flex;
@@ -1836,6 +1853,22 @@ body.laser-on .laser-dot.visible{ opacity:1; }
 .goal-icon.split svg{display:block;width:28px;height:28px;overflow:visible;fill:none;stroke:#fff;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;}
 .goal-icon.split svg circle{fill:#fff;stroke:none;}
 
+
+/* ===== FINAL: uniform centered slide titles (slide 2 to end) ===== */
+.slide .slide-inner > .title,
+.slide .slide-inner > h2.title,
+.slide .slide-inner > h1.title {
+  text-align:center !important;
+  font-size:clamp(30px, 4.6vw, 68px) !important;
+  line-height:1.04 !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+#slide-6 .slide-inner > .title {
+  font-size:clamp(30px, 4.6vw, 68px) !important;
+  display:block !important;
+  text-align:center !important;
+}
 </style>
 
 <style id="slide13-fix">
@@ -2149,50 +2182,33 @@ body.laser-on .laser-dot.visible{ opacity:1; }
   </section>
 
   <!-- ================= SLIDE 06 : PENGERTIAN PCC ================= -->
-  <section class="slide prev-slide" id="slide-6">
-    <div class="slide-inner">
-      <div class="slide-6-head">
-        <h2 class="title">PENGERTIAN <span class="line2">PCC</span></h2>
+<section class="slide prev-slide" id="slide-6">
+  <div class="slide-inner">
+    <h2 class="title">PENGERTIAN PCC</h2>
+    <div class="pcc-definition-clean" style="grid-template-columns:1fr 1fr; margin-top:20px;">
+      <div class="pcc-definition-text">
+        <h3 style="font-size:clamp(20px,1.8vw,28px); margin:0 0 14px; color:var(--navy);">Per Connection Classifier (PCC)</h3>
+        <p>Merupakan fitur pada MikroTik yang digunakan untuk membagi koneksi internet ke beberapa jalur atau ISP secara teratur berdasarkan koneksi yang dibuat oleh pengguna.</p>
       </div>
-      <div class="pcc-definition-layout stagger">
-        <div class="cream-card definition-main">
-          <div class="p-ic">↔</div>
-          <div>
-            <b>PCC (Per Connection Classifier)</b>
-            <p>Merupakan fitur pada MikroTik yang digunakan untuk membagi koneksi internet ke beberapa jalur atau ISP secara teratur berdasarkan koneksi yang dibuat oleh pengguna.</p>
-            <div class="pcc-example"><span>ISP 1</span><b>⇄</b><span>MIKROTIK</span><b>⇄</b><span>ISP 2</span></div>
-          </div>
-        </div>
-        <div class="analogy-card">
-          <div class="analogy-animation natural-road" aria-label="Animasi kendaraan yang dibagi PCC ke dua jalur jalan">
-            <svg class="natural-road-svg" viewBox="0 0 700 280" preserveAspectRatio="none" aria-hidden="true">
-              <!-- Aspal utama dan dua jalan yang melengkung secara alami -->
-              <path class="road-asphalt" d="M-30 140 C110 140 220 140 330 140" />
-              <path class="road-asphalt" d="M315 140 C410 140 430 70 735 55" />
-              <path class="road-asphalt" d="M315 140 C410 140 430 210 735 225" />
-              <!-- Marka jalan -->
-              <path class="road-mark" d="M-30 140 C110 140 220 140 330 140" />
-              <path class="road-mark" d="M315 140 C410 140 430 70 735 55" />
-              <path class="road-mark" d="M315 140 C410 140 430 210 735 225" />
-              <!-- Mobil 1 menuju ISP 1 -->
-              <text class="road-car car-one" x="0" y="0">🚗<animateMotion dur="5s" repeatCount="indefinite" path="M-20 140 C120 140 230 140 315 140 C410 140 430 70 735 55" /></text>
-              <!-- Mobil 2 menuju ISP 2 -->
-              <text class="road-car car-two" x="0" y="0">🚙<animateMotion begin="1.5s" dur="5s" repeatCount="indefinite" path="M-20 140 C120 140 230 140 315 140 C410 140 430 210 735 225" /></text>
-              <!-- Mobil 3 menuju ISP 1 -->
-              <text class="road-car car-three" x="0" y="0">🚕<animateMotion begin="3s" dur="5s" repeatCount="indefinite" path="M-20 140 C120 140 230 140 315 140 C410 140 430 70 735 55" /></text>
-            </svg>
-            <div class="split-gate">PCC</div>
-            <span class="lane-label l1">ISP 1</span><span class="lane-label l2">ISP 2</span>
-            <span class="traffic-in">TRAFIK MASUK</span>
-          </div>
-          <div>
-            <b>Analogi Sederhana</b>
-            <p>Seperti petugas yang membagi kendaraan ke beberapa jalan agar trafik tidak menumpuk di satu jalur.</p>
-          </div>
+      <div class="pcc-illustration">
+        <div class="analogy-animation natural-road" aria-label="Ilustrasi PCC membagi trafik">
+          <svg class="natural-road-svg" viewBox="0 0 700 280" preserveAspectRatio="none" aria-hidden="true">
+            <path class="road-asphalt" d="M-30 140 C110 140 220 140 330 140" />
+            <path class="road-asphalt" d="M315 140 C410 140 430 70 735 55" />
+            <path class="road-asphalt" d="M315 140 C410 140 430 210 735 225" />
+            <path class="road-mark" d="M-30 140 C110 140 220 140 330 140" />
+            <path class="road-mark" d="M315 140 C410 140 430 70 735 55" />
+            <path class="road-mark" d="M315 140 C410 140 430 210 735 225" />
+            <text class="road-car car-one" x="0" y="0">🚗<animateMotion dur="5s" repeatCount="indefinite" path="M-20 140 C120 140 230 140 315 140 C410 140 430 70 735 55" /></text>
+            <text class="road-car car-two" x="0" y="0">🚙<animateMotion begin="1.5s" dur="5s" repeatCount="indefinite" path="M-20 140 C120 140 230 140 315 140 C410 140 430 210 735 225" /></text>
+            <text class="road-car car-three" x="0" y="0">🚕<animateMotion begin="3s" dur="5s" repeatCount="indefinite" path="M-20 140 C120 140 230 140 315 140 C410 140 430 70 735 55" /></text>
+          </svg>
+          <div class="split-gate">PCC</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ================= SLIDE 07 : FUNGSI PCC ================= -->
   <section class="slide prev-slide" id="slide-functions">
@@ -2507,21 +2523,21 @@ const PROJECT = {
 
 /* Speaker notes per slide — tidak ditampilkan ke audiens, hanya untuk presenter */
 const NOTES = [
-  { presenter:"Presenter 1", duration:"± 40 detik", text:"Assalamu'alaikum dan selamat pagi semuanya. Kami dari Tim TJKT Kelas 12 SMKN 1 Sawit akan mempresentasikan proyek Implementasi Load Balancing Metode PCC pada MikroTik. Pada presentasi ini kami akan menjelaskan masalah jaringan, tujuan proyek, topologi, cara kerja PCC, konfigurasi, failover, sampai hasil pengujian." },
-  { presenter:"Presenter 1", duration:"± 45 detik", text:"Pada slide ini terlihat masalah utama yang kami hadapi. Karena hanya menggunakan satu jalur internet, kecepatan bisa tidak stabil saat banyak pengguna terhubung. Semua trafik juga menumpuk di satu ISP, sehingga aktivitas seperti belajar online, upload tugas, download, dan streaming dapat terganggu." },
-  { presenter:"Presenter 1", duration:"± 35 detik", text:"Load balancing adalah teknik untuk membagi trafik jaringan ke beberapa jalur internet. Sederhananya, load balancing seperti membagi kendaraan ke dua jalan agar tidak semua kendaraan melewati satu jalan yang sama. Dengan beberapa jalur internet, trafik dapat dibagi secara lebih seimbang sesuai konfigurasi yang digunakan." },
-  { presenter:"Presenter 1", duration:"± 45 detik", text:"Pada slide ini terdapat tujuan dan manfaat dari penerapan load balancing. Tujuan pertama adalah membagi beban trafik agar koneksi tidak menumpuk pada satu jalur. Kedua, mengoptimalkan bandwidth dari beberapa ISP. Ketiga, menjaga kestabilan koneksi saat jaringan digunakan oleh banyak pengguna. Manfaat yang diperoleh adalah akses internet menjadi lebih optimal, jaringan dapat melayani banyak pengguna dengan lebih baik, dan koneksi menjadi lebih andal. " },
-  { presenter:"Presenter 2", duration:"± 40 detik", text:"Ini adalah topologi jaringan sebelum menggunakan load balancing. Hanya ada satu ISP yang terhubung ke jaringan dan seluruh PC, laptop, serta HP menggunakan jalur yang sama. Akibatnya, ketika jalur tersebut penuh, semua pengguna ikut merasakan penurunan kecepatan." },
-  { presenter:"Presenter 2", duration:"± 45 detik", text:"Setelah proyek diterapkan, jaringan memiliki dua ISP yang masuk ke MikroTik. ISP 1 menggunakan jalur merah dan ISP 2 menggunakan jalur biru. MikroTik menggunakan PCC untuk membagi trafik dari perangkat client ke kedua jalur tersebut, sehingga beban tidak hanya berada pada satu ISP." },
-  { presenter:"Presenter 2", duration:"± 50 detik", text:"PCC atau Per Connection Classifier adalah fitur pada MikroTik yang digunakan untuk membagi koneksi internet ke beberapa ISP. Cara kerjanya bisa dianalogikan seperti pembagian kendaraan ke beberapa jalan. Jadi, ketika kita memiliki dua koneksi internet, PCC dapat membagi koneksi tersebut agar trafik tidak hanya melewati satu ISP. Dengan begitu, penggunaan beberapa koneksi internet bisa menjadi lebih optimal dan beban jaringan dapat terbagi." },
-  { presenter:"Presenter 2", duration:"± 40 detik", text:"PCC memiliki beberapa fungsi utama, yaitu membagi beban trafik ke beberapa ISP, mengoptimalkan penggunaan semua koneksi internet, mengurangi penumpukan trafik pada satu jalur, mengatur jalur koneksi berdasarkan aturan yang dibuat, serta mendukung sistem load balancing pada MikroTik." },
-  { presenter:"Presenter 3", duration:"± 60 detik", text:"Di slide ini kita melihat alur kerja PCC melalui simulasi. Pertama client membuat koneksi, kemudian koneksi masuk ke MikroTik. PCC mengklasifikasikan koneksi tersebut, lalu mengarahkannya ke ISP 1 atau ISP 2 dan akhirnya diteruskan ke internet. Tombol simulasi dapat digunakan untuk melihat pembagian koneksi secara langsung." },
-  { presenter:"Presenter 3", duration:"± 60 detik", text:"Ini adalah konfigurasi singkat pada MikroTik. Pertama mengatur IP Address untuk WAN dan LAN, lalu DHCP Client untuk mendapatkan IP dan gateway dari ISP. Setelah itu DNS, NAT masquerade, Mangle PCC untuk menandai koneksi, Routing untuk mengarahkan koneksi ke gateway masing-masing ISP, dan terakhir testing untuk memastikan koneksi berjalan serta trafik terbagi." },
-  { presenter:"Presenter 4", duration:"± 50 detik", text:"Slide ini menunjukkan kondisi failover. Saat kedua ISP aktif, trafik dibagi ke ISP 1 dan ISP 2. Jika salah satu ISP dimatikan, trafik akan dialihkan ke ISP yang masih aktif sehingga client tetap dapat terhubung. Tanda centang menunjukkan perangkat masih terhubung, sedangkan jika kedua ISP mati maka koneksi client tidak dapat berjalan." },
-  { presenter:"Presenter 4", duration:"± 45 detik", text:"Kesimpulan dari proyek ini adalah load balancing dengan PCC membagi beban trafik ke dua ISP secara merata. Dengan pembagian tersebut, internet dapat menjadi lebih cepat, stabil, dan andal. PCC juga menjaga setiap koneksi tetap pada jalur yang sudah dipilih, sehingga metode ini cocok sebagai solusi jaringan sekolah yang efektif dan terjangkau." },
-  { presenter:"Presenter 4", duration:"± 45 detik", text:"Slide ini menunjukkan perbandingan hasil Speedtest sebelum dan setelah load balancing. Sebelum load balancing, pengujian menunjukkan download 24,11 Mbps dan upload 24,18 Mbps. Setelah load balancing PCC diterapkan, download menjadi 82,29 Mbps dan upload 31,90 Mbps. Hasil dapat berbeda tergantung waktu dan kondisi jaringan." },
-  { presenter:"Presenter 5", duration:"± 20 detik", text:"Demikian presentasi dari kami, Tim TJKT SMKN 1 Sawit. Terima kasih sudah menyimak presentasi tentang implementasi load balancing menggunakan PCC pada MikroTik. Semoga materi dan hasil proyek ini bermanfaat." },
-  { presenter:"Presenter 5", duration:"Sesi tanya jawab", text:"Sekarang kami membuka sesi tanya jawab. Silakan bertanya mengenai cara kerja PCC, konfigurasi MikroTik, kondisi failover, maupun hasil pengujian Speedtest. Kami siap menjawab pertanyaan sesuai bagian materi yang sudah kami jelaskan." }
+  { presenter:"Presenter 1", duration:"± 35 detik", text:"Assalamu’alaikum dan selamat pagi semuanya. Kami dari Tim TJKT Kelas 12 SMKN 1 Sawit akan mempresentasikan implementasi load balancing menggunakan metode PCC atau Per Connection Classifier pada MikroTik. Pada presentasi ini kami akan menjelaskan permasalahan jaringan, tujuan dan manfaat, topologi sebelum dan sesudah, pengertian serta fungsi PCC, cara kerja, konfigurasi, failover, sampai hasil Speedtest." },
+  { presenter:"Presenter 1", duration:"± 40 detik", text:"Pada slide ini kita bisa melihat permasalahan yang dihadapi sebelum menggunakan load balancing. Semua pengguna masih bergantung pada satu jalur internet. Saat banyak pengguna terhubung, beban menumpuk sehingga jaringan mudah melambat dan aktivitas seperti belajar online, upload tugas, dan download ikut terganggu." },
+  { presenter:"Presenter 1", duration:"± 25 detik", text:"Sebelum masuk ke PCC, kita pahami dulu pengertian load balancing. Load balancing adalah teknik untuk membagi trafik jaringan ke beberapa jalur internet agar beban koneksi tidak menumpuk pada satu jalur saja. Jadi, intinya adalah membagi beban ke beberapa jalur." },
+  { presenter:"Presenter 1", duration:"± 35 detik", text:"Tujuan dan manfaatnya terbagi menjadi dua. Tujuannya adalah membagi beban trafik, mengoptimalkan bandwidth, dan menjaga kestabilan koneksi. Manfaatnya, akses internet menjadi lebih optimal, lebih baik saat digunakan banyak pengguna, dan koneksi menjadi lebih andal." },
+  { presenter:"Presenter 2", duration:"± 30 detik", text:"Ini adalah topologi jaringan sebelum load balancing. Hanya ada satu ISP yang terhubung, kemudian jalur tersebut digunakan bersama oleh PC, laptop, dan HP. Jadi ketika jalur internet ini penuh, seluruh pengguna ikut mengalami penurunan kecepatan." },
+  { presenter:"Presenter 2", duration:"± 35 detik", text:"Setelah load balancing diterapkan, kita menggunakan dua ISP yang masuk ke MikroTik. ISP 1 menggunakan jalur merah dan ISP 2 menggunakan jalur biru. Kemudian PCC pada MikroTik membagi trafik dari client ke kedua ISP tersebut." },
+  { presenter:"Presenter 2", duration:"± 45 detik", text:"PCC atau Per Connection Classifier merupakan fitur pada MikroTik yang digunakan untuk membagi koneksi internet ke beberapa jalur atau ISP secara teratur berdasarkan koneksi yang dibuat oleh pengguna. Sederhananya, PCC seperti petugas yang membagi kendaraan ke beberapa jalan agar trafik tidak menumpuk di satu jalur." },
+  { presenter:"Presenter 2", duration:"± 40 detik", text:"Ada beberapa fungsi PCC pada jaringan ini. Pertama, membagi beban trafik ke beberapa ISP. Kedua, mengoptimalkan koneksi yang tersedia. Ketiga, mengurangi penumpukan trafik pada satu jalur. Keempat, mengatur jalur koneksi menuju ISP tertentu. Dan yang kelima, PCC dapat digunakan untuk mendukung sistem load balancing pada MikroTik." },
+  { presenter:"Presenter 3", duration:"± 45 detik", text:"Sekarang kita lihat bagaimana PCC bekerja. Pertama, client membuat koneksi. Koneksi tersebut masuk ke MikroTik, kemudian PCC mengklasifikasikan koneksi. Setelah itu koneksi diarahkan ke ISP 1 atau ISP 2, lalu diteruskan ke internet. Di slide ini juga tersedia simulasi untuk melihat alurnya secara langsung." },
+  { presenter:"Presenter 3", duration:"± 45 detik", text:"Berikut konfigurasi singkat yang dilakukan pada MikroTik. Pertama mengatur IP Address untuk WAN 1, WAN 2, dan LAN. Kemudian DHCP Client untuk mendapatkan IP dan gateway dari masing-masing ISP. Setelah itu DNS, NAT masquerade, Mangle PCC untuk membagi trafik, Routing untuk mengarahkan koneksi ke gateway masing-masing ISP, dan terakhir dilakukan testing." },
+  { presenter:"Presenter 4", duration:"± 35 detik", text:"Pada kondisi failover, saat kedua ISP aktif, trafik dibagi melalui ISP 1 dan ISP 2. Jika salah satu ISP mengalami down, trafik akan otomatis dialihkan ke ISP yang masih aktif. Dengan begitu, PC, laptop, dan HP tetap dapat terhubung selama masih ada satu jalur ISP yang aktif." },
+  { presenter:"Presenter 4", duration:"± 30 detik", text:"Dari proyek ini dapat disimpulkan bahwa load balancing dengan PCC membagi beban trafik ke dua ISP secara merata. Internet menjadi lebih cepat, stabil, dan andal. PCC juga menjaga setiap koneksi tetap konsisten pada jalurnya, sehingga solusi ini efektif dan terjangkau untuk jaringan sekolah." },
+  { presenter:"Presenter 4", duration:"± 30 detik", text:"Di sini kita melihat hasil Speedtest sebelum dan setelah load balancing. Sebelum load balancing, download yang didapat adalah 24,11 Mbps dan upload 24,18 Mbps. Setelah load balancing dengan dua ISP dan PCC diterapkan, download menjadi 82,29 Mbps dan upload menjadi 31,90 Mbps." },
+  { presenter:"Presenter 5", duration:"± 15 detik", text:"Demikian presentasi dari kami, Tim TJKT SMKN 1 Sawit. Terima kasih atas perhatian dan waktunya. Semoga presentasi ini bermanfaat." },
+  { presenter:"Presenter 5", duration:"Sesi tanya jawab", text:"Baik, setelah pemaparan materi dan hasil proyek, sekarang kami membuka sesi tanya jawab. Silakan jika ada yang ingin ditanyakan mengenai load balancing, PCC, konfigurasi MikroTik, failover, maupun hasil Speedtest." }
 ];
 
 /* ============================================================
