@@ -2270,7 +2270,7 @@ body.laser-on .laser-dot.visible{ opacity:1; }
   <!-- ================= SLIDE 07 : SIMULASI PCC ================= -->
   <section class="slide prev-slide" id="slide-7">
     <div class="slide-inner sim-panel">
-      <h2 class="title slide8-title">FAILOVER</h2>
+      <h2 class="title slide8-title">CARA KERJA PCC</h2>
 
       <div class="sim-steps" id="simSteps">
         <div class="step" data-step="1"><span class="n">1</span>Client membuat koneksi</div>
@@ -2337,14 +2337,14 @@ body.laser-on .laser-dot.visible{ opacity:1; }
   <!-- ================= SLIDE 08 : KONFIGURASI MIKROTIK ================= -->
   <section class="slide prev-slide" id="slide-8">
     <div class="slide-inner">
-      <h2 class="title slide9-title">KONFIGURASI SINGKAT (MIKROTIK)</h2>
+      <h2 class="title slide9-title">KONFIGURASI SINGKAT</h2>
       <div class="cfg-grid stagger">
-        <div class="cfg-step"><span class="cfg-n">1</span><div><h4>Set IP Address</h4><p>Atur IP untuk WAN 1, WAN 2, dan LAN.</p></div></div>
-        <div class="cfg-step"><span class="cfg-n">2</span><div><h4>Set DHCP Client</h4><p>Ambil IP dan gateway dari masing-masing ISP.</p></div></div>
-        <div class="cfg-step"><span class="cfg-n">3</span><div><h4>Set DNS</h4><p>Konfigurasi DNS agar jaringan bisa menerjemahkan alamat website.</p></div></div>
-        <div class="cfg-step"><span class="cfg-n">4</span><div><h4>Set NAT</h4><p>Buat masquerade agar client LAN bisa mengakses internet.</p></div></div>
-        <div class="cfg-step"><span class="cfg-n">5</span><div><h4>Set Mangle PCC</h4><p>Tandai koneksi dan bagi trafik ke ISP 1 dan ISP 2.</p></div></div>
-        <div class="cfg-step"><span class="cfg-n">6</span><div><h4>Set Routing</h4><p>Arahkan koneksi yang sudah ditandai menuju gateway ISP masing-masing.</p></div></div>
+        <div class="cfg-step"><span class="cfg-n">1</span><div><h4>Setting IP Address</h4><p>Atur IP untuk LAN.</p></div></div>
+        <div class="cfg-step"><span class="cfg-n">2</span><div><h4>Setting DHCP Client</h4><p>Ambil IP dan gateway dari masing-masing ISP.</p></div></div>
+        <div class="cfg-step"><span class="cfg-n">3</span><div><h4>Setting DNS</h4><p>Konfigurasi DNS agar jaringan bisa menerjemahkan alamat website.</p></div></div>
+        <div class="cfg-step"><span class="cfg-n">4</span><div><h4>Setting NAT</h4><p>Buat masquerade agar client LAN bisa mengakses internet.</p></div></div>
+        <div class="cfg-step"><span class="cfg-n">5</span><div><h4>Setting Mangle PCC</h4><p>Tandai koneksi dan bagi trafik ke ISP 1 dan ISP 2.</p></div></div>
+        <div class="cfg-step"><span class="cfg-n">6</span><div><h4>Setting Routing</h4><p>Arahkan koneksi yang sudah ditandai menuju gateway ISP masing-masing.</p></div></div>
         <div class="cfg-step cfg-wide"><span class="cfg-n">7</span><div><h4>Testing</h4><p>Cek koneksi dan pastikan trafik terbagi melalui kedua ISP.</p></div></div>
       </div>
     </div>
@@ -2353,7 +2353,7 @@ body.laser-on .laser-dot.visible{ opacity:1; }
   <!-- ================= SLIDE 09 : FAILOVER ================= -->
   <section class="slide" id="slide-9">
     <div class="slide-inner">
-      <h2 class="title" style="font-size:clamp(26px,3.6vw,54px); text-align:center; white-space:nowrap;">CARA KERJA PCC</h2>
+      <h2 class="title" style="font-size:clamp(26px,3.6vw,54px); text-align:center; white-space:nowrap;">FAILOVER</h2>
       <div style="display:grid; grid-template-columns:.65fr 1.35fr; gap:2.5vw; align-items:center;">
         <div style="display:flex; flex-direction:column; gap:2.2vh;">
           <p class="fo-hint">Jika salah satu ISP <em>down</em>, trafik akan <em>otomatis dialihkan</em> ke ISP yang masih aktif.</p>
@@ -2361,13 +2361,13 @@ body.laser-on .laser-dot.visible{ opacity:1; }
             <div class="status-chip"><span class="status-dot" id="statusDotIsp1"></span>ISP 1</div>
             <div class="status-chip"><span class="status-dot" id="statusDotIsp2"></span>ISP 2</div>
           </div>
-          <p class="status-msg" id="failoverMsg">Kedua jalur aktif — trafik dibagi ke ISP 1 dan ISP 2.</p>
+          <p class="status-msg" id="failoverMsg">Kedua jalur aktif trafik dibagi ke ISP 1 dan ISP 2.</p>
           <div style="display:flex; gap:10px; flex-wrap:wrap;">
             <button class="btn btn-red" id="btnFailover">⏻ MATIKAN ISP 1</button>
             <button class="btn btn-red" id="btnFailover2">⏻ MATIKAN ISP 2</button>
           </div>
         </div>
-        <div class="tree zoom-tree" data-caption="Kondisi failover — ISP down, trafik dialihkan ke ISP yang aktif" style="height:clamp(280px,50vh,500px)">
+        <div class="tree zoom-tree" data-caption="Kondisi failover ISP down, trafik dialihkan ke ISP yang aktif" style="height:clamp(280px,50vh,500px)">
           <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
             <path class="tline flow red" id="foLineIsp1" d="M28,20 C32,30 40,34 47,40"></path>
             <path class="tline flow blue" id="foLineIsp2" d="M72,20 C68,30 60,34 53,40"></path>
