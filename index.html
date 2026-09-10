@@ -2971,16 +2971,16 @@ function renderFailover(){
   statusDotIsp2.classList.toggle("off", !isp2Online);
 
   if(bothOffline){
-    failoverMsg.textContent = "ISP 1 dan ISP 2 down! Semua jalur terputus — internet tidak tersedia.";
+    failoverMsg.textContent = "ISP 1 dan ISP 2 down! Semua jalur terputus internet tidak tersedia.";
     failoverMsg.classList.add("alert");
   } else if(!isp1Online){
-    failoverMsg.textContent = "ISP 1 down! Trafik otomatis dialihkan ke ISP 2 — internet tetap jalan.";
+    failoverMsg.textContent = "ISP 1 down! Trafik otomatis dialihkan ke ISP 2 internet tetap jalan.";
     failoverMsg.classList.add("alert");
   } else if(!isp2Online){
-    failoverMsg.textContent = "ISP 2 down! Trafik otomatis dialihkan ke ISP 1 — internet tetap jalan.";
+    failoverMsg.textContent = "ISP 2 down! Trafik otomatis dialihkan ke ISP 1 internet tetap jalan.";
     failoverMsg.classList.add("alert");
   } else {
-    failoverMsg.textContent = "Kedua jalur aktif — trafik dibagi ke ISP 1 dan ISP 2.";
+    failoverMsg.textContent = "Kedua jalur aktif trafik dibagi ke ISP 1 dan ISP 2.";
     failoverMsg.classList.remove("alert");
   }
 
