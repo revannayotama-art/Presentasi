@@ -1906,6 +1906,132 @@ body.laser-on .laser-dot.visible{ opacity:1; }
 }
 #slide-functions .slide-6-head{width:100%;text-align:center !important;}
 #slide-functions .functions-title{display:block;width:100%;text-align:center !important;white-space:nowrap !important;}
+
+/* ============================================================
+   SLIDE 02 — REFINEMENT
+   Lebih ringkas, seimbang, dan memperjelas hierarki visual.
+   ============================================================ */
+#slide-2 .slide-inner{
+  gap:1.7vh;
+}
+
+#slide-2 .title{
+  font-size:clamp(34px,4vw,58px);
+}
+
+#slide-2 .lead{
+  max-width:720px;
+  font-size:clamp(14px,1.2vw,19px);
+  line-height:1.45;
+}
+
+#slide-2 .two-col{
+  grid-template-columns:minmax(0,1.12fr) minmax(390px,.88fr) !important;
+  gap:clamp(28px,3.2vw,48px) !important;
+  align-items:center;
+}
+
+#slide-2 .cream-card{
+  max-width:700px !important;
+  padding:clamp(20px,2.1vw,30px);
+}
+
+#slide-2 .point-list{
+  gap:2px;
+}
+
+#slide-2 .point{
+  padding:clamp(9px,1vw,14px) 0;
+}
+
+#slide-2 .point b{
+  font-size:clamp(15px,1.18vw,18px);
+  line-height:1.25;
+}
+
+#slide-2 .point p{
+  font-size:clamp(11.5px,.92vw,14px);
+  line-height:1.42;
+}
+
+#slide-2 .problem-visual-wrap{
+  width:100%;
+  max-width:470px;
+  margin-left:auto;
+}
+
+#slide-2 .problem-topology{
+  width:100%;
+  max-width:470px;
+  padding:16px;
+  border-radius:26px;
+  background:rgba(255,255,255,.96);
+  border:1px solid rgba(15,33,56,.08);
+  box-shadow:0 16px 34px rgba(15,33,56,.15);
+}
+
+#slide-2 .problem-label{
+  width:100%;
+  margin:0 0 10px;
+  padding:9px 12px;
+  border-radius:999px;
+  background:rgba(15,33,56,.055);
+  border:1px solid rgba(15,33,56,.08);
+  color:var(--navy);
+  font-size:clamp(10px,.82vw,12.5px);
+  letter-spacing:.045em;
+}
+
+#slide-2 .warning-dot{
+  width:24px;
+  height:24px;
+  flex:0 0 24px;
+  font-size:13px;
+  box-shadow:0 4px 10px rgba(225,72,60,.22);
+}
+
+#slide-2 .problem-topology-tree{
+  height:clamp(235px,27vh,310px);
+  margin-top:6px;
+  border-radius:18px;
+  background:rgba(15,33,56,.025);
+  border:1px solid rgba(15,33,56,.045);
+}
+
+#slide-2 .problem-topology-tree .tree{
+  transform:scale(.88);
+}
+
+#slide-2 .problem-bottleneck{
+  margin:9px 2px 0;
+  padding:10px 12px;
+  border-radius:14px;
+}
+
+#slide-2 .problem-bottleneck>span{
+  width:32px;
+  height:32px;
+  font-size:14px;
+}
+
+#slide-2 .problem-bottleneck b{
+  font-size:clamp(12.5px,1vw,15px);
+}
+
+#slide-2 .problem-bottleneck small{
+  font-size:clamp(10.5px,.82vw,12.5px);
+}
+
+@media(max-width:900px){
+  #slide-2 .two-col{
+    grid-template-columns:1fr !important;
+  }
+  #slide-2 .problem-visual-wrap{
+    max-width:520px;
+    margin:0 auto;
+  }
+}
+
 </style>
 
 <style id="slide13-fix">
@@ -2102,30 +2228,30 @@ body.laser-on .laser-dot.visible{ opacity:1; }
   <!-- ================= SLIDE 02 : MASALAH ================= -->
   <section class="slide prev-slide" id="slide-2">
     <div class="slide-inner">
-      <h2 class="title">PERMASALAHAN YANG DIHADAPI</h2>
-      <p class="lead">Sebelum menggunakan <b>load balancing</b>, seluruh pengguna bergantung pada <b>satu jalur internet</b>.</p>
+      <h2 class="title">PERMASALAHAN JARINGAN</h2>
+      <p class="lead">Sebelum <b>load balancing</b> diterapkan, seluruh pengguna mengakses internet melalui <b>satu jalur</b>.</p>
 
       <div class="two-col" style="grid-template-columns:1.18fr .82fr;align-items:center;gap:clamp(24px,4vw,56px)">
         <div class="cream-card" style="max-width:760px">
           <div class="point-list stagger">
             <div class="point">
               <div class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15a8 8 0 0 1 16 0"></path><path d="M12 15l4-5"></path><circle cx="12" cy="15" r="1.6" fill="currentColor"></circle><path d="M3 19h18"></path></svg></div>
-              <div><b>Jaringan mudah melambat</b><p>Saat banyak pengguna terhubung secara bersamaan, beban menumpuk pada satu jalur sehingga kecepatan menjadi tidak stabil.</p></div>
+              <div><b>Kecepatan mudah turun</b><p>Saat banyak pengguna online, satu jalur menerima beban tinggi sehingga koneksi melambat.</p></div>
             </div>
             <div class="point">
               <div class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4"></path><circle cx="12" cy="16.5" r=".8" fill="currentColor"></circle></svg></div>
-              <div><b>Semua trafik bergantung pada satu jalur</b><p>Ketika jalur tersebut mengalami gangguan atau penuh, seluruh pengguna akan ikut merasakan dampaknya.</p></div>
+              <div><b>Risiko gangguan lebih besar</b><p>Jika jalur penuh atau bermasalah, akses internet banyak pengguna ikut terdampak.</p></div>
             </div>
             <div class="point">
               <div class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16"></path><path d="M6 16v-4"></path><path d="M10 16V8"></path><path d="M14 16v-2"></path><path d="M18 16V5"></path></svg></div>
-              <div><b>Aktivitas pengguna ikut terganggu</b><p>Belajar online, upload tugas, download, dan aktivitas internet lainnya dapat berjalan lebih lambat.</p></div>
+              <div><b>Aktivitas internet terganggu</b><p>Pembelajaran online, upload tugas, dan download menjadi kurang lancar.</p></div>
             </div>
           </div>
         </div>
 
         <div class="stagger problem-visual-wrap">
           <div class="problem-topology">
-            <div class="problem-label"><span class="warning-dot">!</span> SATU JALUR MENANGGUNG SEMUA BEBAN</div>
+            <div class="problem-label"><span class="warning-dot">!</span> SATU JALUR UNTUK SEMUA PENGGUNA</div>
             <div class="problem-topology-tree"><div class="tree zoom-tree" data-caption="Satu ISP, satu jalur untuk semua perangkat">
         <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
           <path class="tline flow red" d="M50,18 L50,40"></path>
@@ -2137,7 +2263,7 @@ body.laser-on .laser-dot.visible{ opacity:1; }
         <div class="tn" style="left:50%; top:89%"><div class="device-card device-laptop"><span class="device-icon"></span><span>LAPTOP</span></div></div>
         <div class="tn" style="left:75%; top:89%"><div class="device-card device-phone"><span class="device-icon"></span><span>HP</span></div></div>
       </div></div>
-            <div class="problem-bottleneck"><span>⚠</span><div><b>Titik penumpukan trafik</b><small>Semua perangkat menggunakan satu jalur ISP yang sama.</small></div></div>
+            <div class="problem-bottleneck"><span>⚠</span><div><b>Beban menumpuk pada satu jalur</b><small>Semakin banyak pengguna, semakin besar beban pada jalur ISP.</small></div></div>
           </div>
         </div>
       </div>
@@ -3151,3 +3277,111 @@ goTo(0);
 }
 </style>
 </body></html>
+
+<style>
+/* FINAL TUNING — Slide 2: ilustrasi dibuat lebih proporsional dengan isi slide */
+#slide-2 .two-col{
+  grid-template-columns:minmax(0,1.18fr) minmax(360px,.82fr) !important;
+  gap:clamp(24px,3.5vw,52px) !important;
+  align-items:center !important;
+}
+
+#slide-2 .cream-card{
+  width:100%;
+  max-width:720px !important;
+  padding:clamp(20px,2vw,28px) !important;
+}
+
+#slide-2 .problem-visual-wrap{
+  width:100%;
+  max-width:430px;
+  justify-self:end;
+}
+
+#slide-2 .problem-topology{
+  width:100%;
+  max-width:430px;
+  padding:14px !important;
+  border-radius:24px !important;
+  background:rgba(255,255,255,.97) !important;
+  box-shadow:0 14px 30px rgba(15,33,56,.14) !important;
+}
+
+#slide-2 .problem-label{
+  margin:0 0 8px !important;
+  padding:8px 10px !important;
+  font-size:clamp(9px,.72vw,11px) !important;
+  color:var(--navy) !important;
+  background:rgba(15,33,56,.055) !important;
+  border:1px solid rgba(15,33,56,.08) !important;
+  white-space:nowrap;
+}
+
+#slide-2 .warning-dot{
+  width:22px !important;
+  height:22px !important;
+  font-size:12px !important;
+}
+
+#slide-2 .problem-topology-tree{
+  height:clamp(220px,25vh,285px) !important;
+  margin-top:5px !important;
+  border-radius:16px !important;
+  background:#fafbfc !important;
+  border:1px solid rgba(15,33,56,.05) !important;
+}
+
+#slide-2 .problem-topology-tree .tree{
+  transform:scale(.82) !important;
+  transform-origin:center center !important;
+}
+
+/* Router dan node dibuat mengikuti ruang ilustrasi, bukan memenuhi panel. */
+#slide-2 .problem-topology-tree .router-photo{
+  width:clamp(92px,9vw,125px) !important;
+  max-height:72px !important;
+  object-fit:contain;
+}
+
+#slide-2 .problem-topology-tree .isp-pill{
+  transform:scale(.82);
+  transform-origin:center;
+  white-space:nowrap;
+}
+
+#slide-2 .problem-topology-tree .pcc-box{
+  transform:scale(.86);
+  transform-origin:center;
+}
+
+#slide-2 .problem-topology-tree .device-card{
+  transform:scale(.82);
+  transform-origin:center top;
+}
+
+#slide-2 .problem-bottleneck{
+  margin:8px 1px 0 !important;
+  padding:9px 10px !important;
+  gap:9px !important;
+  border-radius:13px !important;
+}
+
+#slide-2 .problem-bottleneck>span{
+  width:29px !important;
+  height:29px !important;
+  font-size:12px !important;
+}
+
+#slide-2 .problem-bottleneck b{
+  font-size:clamp(11.5px,.9vw,14px) !important;
+}
+
+#slide-2 .problem-bottleneck small{
+  font-size:clamp(9.5px,.72vw,11.5px) !important;
+}
+
+@media(max-width:900px){
+  #slide-2 .two-col{grid-template-columns:1fr !important;}
+  #slide-2 .problem-visual-wrap{max-width:460px;justify-self:center;}
+}
+</style>
