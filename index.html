@@ -1918,9 +1918,17 @@ body.laser-on .laser-dot.visible{ opacity:1; }
 }
 
 #slide-2 .lead{
-  max-width:720px;
+  width:min(100%,900px);
+  max-width:900px;
+  margin:0 auto;
+  padding:18px 30px;
+  border:2px solid rgba(15,33,56,.48);
+  border-radius:20px;
+  background:rgba(255,255,255,.22);
   font-size:clamp(14px,1.2vw,19px);
-  line-height:1.45;
+  line-height:1.5;
+  text-align:center;
+  box-shadow:0 4px 0 rgba(15,33,56,.05);
 }
 
 #slide-2 .two-col{
@@ -2227,29 +2235,29 @@ body.laser-on .laser-dot.visible{ opacity:1; }
   <section class="slide prev-slide" id="slide-2">
     <div class="slide-inner">
       <h2 class="title">PERMASALAHAN JARINGAN</h2>
-      <p class="lead">Sebelum <b>load balancing</b> diterapkan, seluruh pengguna mengakses internet melalui <b>satu jalur</b>.</p>
 
       <div class="two-col" style="grid-template-columns:1.18fr .82fr;align-items:center;gap:clamp(24px,4vw,56px)">
         <div class="cream-card" style="max-width:760px">
+          <p class="lead" style="margin:0 0 28px;line-height:1.55">Saat ini, jaringan hanya mengandalkan <b>1 ISP (satu jalur internet)</b> untuk melayani seluruh pengguna. Karena tidak ada jalur lain, seluruh beban trafik data menumpuk di satu tempat yang sama.</p>
           <div class="point-list stagger">
             <div class="point">
               <div class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15a8 8 0 0 1 16 0"></path><path d="M12 15l4-5"></path><circle cx="12" cy="15" r="1.6" fill="currentColor"></circle><path d="M3 19h18"></path></svg></div>
-              <div><b>Kecepatan mudah turun</b><p>Saat banyak pengguna online, satu jalur menerima beban tinggi sehingga koneksi melambat.</p></div>
+              <div><b>Kecepatan Menurun Drastis</b><p>Karena semua perangkat berbagi kapasitas dari satu ISP yang sama, koneksi akan langsung melambat atau terasa berat saat banyak yang menggunakannya bersamaan.</p></div>
             </div>
             <div class="point">
               <div class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4"></path><circle cx="12" cy="16.5" r=".8" fill="currentColor"></circle></svg></div>
-              <div><b>Risiko gangguan lebih besar</b><p>Jika jalur penuh atau bermasalah, akses internet banyak pengguna ikut terdampak.</p></div>
+              <div><b>Risiko Internet Mati Total</b><p>Tanpa adanya jalur cadangan, jika satu-satunya ISP mengalami gangguan atau <i>down</i>, seluruh akses internet pengguna akan terputus sepenuhnya.</p></div>
             </div>
             <div class="point">
               <div class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16"></path><path d="M6 16v-4"></path><path d="M10 16V8"></path><path d="M14 16v-2"></path><path d="M18 16V5"></path></svg></div>
-              <div><b>Aktivitas internet terganggu</b><p>Pembelajaran online, upload tugas, dan download menjadi kurang lancar.</p></div>
+              <div><b>Aktivitas Online Terhambat</b><p>Kapasitas 1 ISP yang penuh membuat aktivitas jaringan tidak stabil, sehingga pembelajaran online, <i>upload</i> tugas, atau <i>download</i> file menjadi tersendat.</p></div>
             </div>
           </div>
         </div>
 
         <div class="stagger problem-visual-wrap">
           <div class="problem-topology">
-            <div class="problem-label"><span class="warning-dot">!</span> SATU JALUR UNTUK SEMUA PENGGUNA</div>
+            <div class="problem-label"><span class="warning-dot">!</span> HANYA MENGGUNAKAN 1 ISP</div>
             <div class="problem-topology-tree"><div class="tree zoom-tree" data-caption="Satu ISP, satu jalur untuk semua perangkat">
         <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
           <path class="tline flow red" d="M50,18 L50,40"></path>
@@ -2261,7 +2269,7 @@ body.laser-on .laser-dot.visible{ opacity:1; }
         <div class="tn" style="left:50%; top:89%"><div class="device-card device-laptop"><span class="device-icon"></span><span>LAPTOP</span></div></div>
         <div class="tn" style="left:75%; top:89%"><div class="device-card device-phone"><span class="device-icon"></span><span>HP</span></div></div>
       </div></div>
-            <div class="problem-bottleneck"><span>⚠</span><div><b>Beban menumpuk pada satu jalur</b><small>Semakin banyak pengguna, semakin besar beban pada jalur ISP.</small></div></div>
+            <div class="problem-bottleneck"><span>⚠</span><div><b>Beban menumpuk di satu titik.</b><small>Akibat hanya ada 1 jalur ISP, kemacetan data pasti terjadi ketika jumlah pengguna bertambah.</small></div></div>
           </div>
         </div>
       </div>
